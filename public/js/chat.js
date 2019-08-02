@@ -69,7 +69,8 @@ socket.on('locationMessage', (message) => {
 socket.on('roomData', ({ room, users }) => {
     const html = Mustache.render(roomDataTemplate, {
         room,
-        users
+        users,
+        numberOfUsers: users.length
     });
 
     document.querySelector('#sidebar').innerHTML = html;
